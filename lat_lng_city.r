@@ -116,8 +116,9 @@ heremaps.restquery <- function(HEREtype, key = NULL) {
   if (HEREtype %in% names(HERE_rest_queries)) {
     result <- HERE_rest_queries[[HEREtype]]
   } else {
-    if (is.null(key)) {
-      key <- "Here "
+    if (is.null(key)) {    
+      #########API KEY #######
+      key <- "Here Maps Key "
     }
     urlstring <-
       paste0("https://geocode.search.hereapi.com/v1/geocode?q=",
@@ -152,7 +153,8 @@ heremaps.rev_geo_restquery <- function(HEREtype, key = NULL) {
     result <- HERE_rest_reversegeo_queries[[HEREtype]]
   } else {
     if (is.null(key)) {
-      key <- "DzmSa0KO8IqhIrN-anOUDM6Jn7juu-9tmWDpCPBdyso"
+      #########API KEY #######
+      key <- "Here Maps Key "
     }
     urlstring <-
       paste0(
