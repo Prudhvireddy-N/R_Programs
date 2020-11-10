@@ -2,6 +2,9 @@ library(dplyr)
 
 #1. HERE Maps Function
 
+### https://developer.here.com/  
+###create a developer account to use 250K free transcation per month for api ##
+
 # use an internal environment to cache DB information
 HERE_rest_queries <- new.env(parent = emptyenv())
 
@@ -74,9 +77,14 @@ heremaps.rev_geo_restquery <- function(HEREtype, key = NULL) {
   result$items[[1]]
   
 }
-
 #### Example ###
 ### Avoid spaces in function parameters or replace spaces with %20 for UTF-8 convertion 
 
-heremaps.restquery("Tirupati")
-heremaps.rev_geo_restquery ("13.622523,79.417959")
+r <- heremaps.restquery("Tirupati")
+##round of to 3 digits after point
+lat <- signif(as.numeric(r$position$lat), digits = 5)
+lng <- signif(as.numeric(r$position$lng), digits = 5)
+city <- r$address$city
+
+l <- heremaps.rev_geo_restquery ("13.622523,79.417959")
+city_l <- l$address$city
