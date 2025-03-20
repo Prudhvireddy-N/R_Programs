@@ -35,3 +35,5 @@ This R script connects to a database and performs a series of operations related
 3. **Here Maps API Key**: You must have a valid Here Maps API key. Replace "Here Maps Key" in the script with your actual API key.
 
 4. **Database Connection**: The script connects to a SQL Server database. Ensure the odbc connection details (hostname, database name, user ID, password, port) are updated correctly.
+
+##
